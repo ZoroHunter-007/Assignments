@@ -4,7 +4,6 @@ struct Student
     /* data */
     int rno,marks;
     char name[20];
-
 }s1[3];
 
 void main()
@@ -15,9 +14,8 @@ void main()
         scanf("%d",&s1[i].rno);
         printf("\nEnter a Name:");
         scanf("%s",&s1[i].name);
-        printf("\nEnter a marks:");
+        printf("\nEnter a Marks:");
         scanf("%d",&s1[i].marks);
-
     }
 
     for(int i=0;i<3;i++)
