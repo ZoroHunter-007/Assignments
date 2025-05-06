@@ -1,7 +1,7 @@
 #include<stdio.h>
 int inputMatrix(int rows,int cols,int matrix[10][10],char name)
 {
-    printf("Enter a elemnet of matrix %c(%dx%d):\n",name,rows,cols);
+    printf("\nEnter a element of matrix %c(%dx%d):",name,rows,cols);
     for(int i=0;i<rows;i++)
     {
         for(int j=0;j<cols;j++)
@@ -11,9 +11,10 @@ int inputMatrix(int rows,int cols,int matrix[10][10],char name)
         }
     }
 }
+
 int printMatrix(int rows,int cols,int matrix[10][10])
 {
-    for(int i=0;i<rows;i++)
+    for (int i = 0; i < rows; i++)
     {
         for(int j=0;j<cols;j++)
         {
@@ -21,63 +22,62 @@ int printMatrix(int rows,int cols,int matrix[10][10])
         }
         printf("\n");
     }
+    
 }
 
 void main()
 {
     int rows,cols;
-    int matrixA[10][10],matrixB[10][10],result[10][10];
-    printf("\nEnter a rows and columns:");
+    int matrixA[10][10], matrixB[10][10], result[10][10];
+
+    printf("\nEnter rows and columns:");
     scanf("%d %d",&rows,&cols);
 
     inputMatrix(rows,cols,matrixA,'A');
     inputMatrix(rows,cols,matrixB,'B');
-
-    //addition of matrix
-    printf("\nAdditon of matrix:\n");
+    //Addition of matrix
+    printf("\nAddition of matrix:\n");
     for(int i=0;i<rows;i++)
     {
         for(int j=0;j<cols;j++)
         {
-            result[i][j]=matrixA[i][j]+matrixB[i][j];
-        }
-    }
-    printMatrix(rows,cols,result);
-    //subtraction of matrix
-    printf("\nSubtraction of matrix:\n");
-    for(int i=0;i<rows;i++)
-    {
-        for(int j=0;j<cols;j++)
-        {
-            result[i][j]=matrixA[i][j]-matrixB[i][j];
+            result[i][j]=matrixA[i][j] + matrixB[i][j];
         }
     }
     printMatrix(rows,cols,result);
 
-    //multiplication of matrix
+    printf("\nSubtration of matrix:\n");
+    for(int i=0;i<rows;i++)
+    {
+        for(int j=0;j<cols;j++)
+        {
+            result[i][j]=matrixA[i][j] - matrixB[i][j];
+        }
+    }
+    printMatrix(rows,cols,result);
+
     printf("\nMultiplication of matrix:\n");
     for(int i=0;i<rows;i++)
     {
         for(int j=0;j<cols;j++)
         {
-            result[i][j]=matrixA[i][j]*matrixB[i][j];
+            result[i][j]=matrixA[i][j] * matrixB[i][j];
         }
     }
     printMatrix(rows,cols,result);
 
-    //Division of matrix
-    printf("\nDivision of matrix:\n");
+    printf("\nDivison of matrix:\n");
     for(int i=0;i<rows;i++)
     {
         for(int j=0;j<cols;j++)
         {
-            if(matrixB[i][j]!=0)
-            {
-            result[i][j]=matrixA[i][j]/matrixB[i][j];
-            }
-            else{
-                printf("\nYou can't matrix divided by zero");
-            }
+           if(matrixB[i][j]!=0)
+           {
+            result[i][j]=matrixA[i][j] / matrixB[i][j];
+           }
+           else{
+            printf("\nYou can't divided by zero");
+           }
         }
     }
     printMatrix(rows,cols,result);
